@@ -1,0 +1,297 @@
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">// 3.9 AccountTest.cpp</span>
+
+
+<span style="color: #408080; font-style: italic">// Displaying and updating Account balances.</span>
+<span style="color: #BC7A00">#include &lt;iostream&gt;</span>
+<span style="color: #BC7A00">#include &quot;Account.h&quot;</span>
+
+<span style="color: #008000; font-weight: bold">using</span> <span style="color: #008000; font-weight: bold">namespace</span> std;
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>()
+{
+    Account account1{<span style="color: #BA2121">&quot;Jane Green&quot;</span>, <span style="color: #666666">50</span>};
+    Account account2{<span style="color: #BA2121">&quot;John Blue&quot;</span>, <span style="color: #666666">-7</span>};
+
+    <span style="color: #408080; font-style: italic">// display initial balance of each object</span>
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;account1: &quot;</span> <span style="color: #666666">&lt;&lt;</span> account1.getName() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; balance is $&quot;</span>
+         <span style="color: #666666">&lt;&lt;</span> account1.getBalance();
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">account2: &quot;</span> <span style="color: #666666">&lt;&lt;</span> account2.getName() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; balance is $&quot;</span>
+         <span style="color: #666666">&lt;&lt;</span> account2.getBalance();
+
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n\n</span><span style="color: #BA2121">Enter deposit amount for account1: &quot;</span>; <span style="color: #408080; font-style: italic">// prompt</span>
+    <span style="color: #B00040">int</span> depositAmount;
+    cin <span style="color: #666666">&gt;&gt;</span> depositAmount; <span style="color: #408080; font-style: italic">// obtain user input</span>
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;adding &quot;</span> <span style="color: #666666">&lt;&lt;</span> depositAmount <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; to account1 balance&quot;</span>;
+    account1.deposit(depositAmount); <span style="color: #408080; font-style: italic">// add to account1&#39;s balance</span>
+
+    <span style="color: #408080; font-style: italic">// display balances</span>
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n\n</span><span style="color: #BA2121">account1: &quot;</span> <span style="color: #666666">&lt;&lt;</span> account1.getName() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; balance is $&quot;</span>
+         <span style="color: #666666">&lt;&lt;</span> account1.getBalance();
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">account2: &quot;</span> <span style="color: #666666">&lt;&lt;</span> account2.getName() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; balance is $&quot;</span>
+         <span style="color: #666666">&lt;&lt;</span> account2.getBalance();
+
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n\n</span><span style="color: #BA2121">Enter deposit amount for account2: &quot;</span>; <span style="color: #408080; font-style: italic">// prompt</span>
+    cin <span style="color: #666666">&gt;&gt;</span> depositAmount; <span style="color: #408080; font-style: italic">// obtain user input</span>
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;adding &quot;</span> <span style="color: #666666">&lt;&lt;</span> depositAmount <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; to account2 balance&quot;</span>;
+    account2.deposit(depositAmount); <span style="color: #408080; font-style: italic">// add to account2 balance</span>
+
+    <span style="color: #408080; font-style: italic">// display balances</span>
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n\n</span><span style="color: #BA2121">account1: &quot;</span> <span style="color: #666666">&lt;&lt;</span> account1.getName() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; balance is $&quot;</span>
+         <span style="color: #666666">&lt;&lt;</span> account1.getBalance();
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">account2: &quot;</span> <span style="color: #666666">&lt;&lt;</span> account2.getName() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; balance is $&quot;</span>
+         <span style="color: #666666">&lt;&lt;</span> account2.getBalance() <span style="color: #666666">&lt;&lt;</span> endl;
+
+    <span style="color: #408080; font-style: italic">// Withdrawal amount</span>
+    <span style="color: #B00040">int</span> withdrawAmount;
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n\n</span><span style="color: #BA2121">Enter withdrawal amount for account1: &quot;</span>;
+    cin <span style="color: #666666">&gt;&gt;</span> withdrawAmount;
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;withdrawing &quot;</span> <span style="color: #666666">&lt;&lt;</span> withdrawAmount <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; from account1 balance&quot;</span>;
+    account1.withdraw(withdrawAmount);
+
+    <span style="color: #408080; font-style: italic">// display balances</span>
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n\n</span><span style="color: #BA2121">account1: &quot;</span> <span style="color: #666666">&lt;&lt;</span> account1.getName() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; balance is $&quot;</span>
+         <span style="color: #666666">&lt;&lt;</span> account1.getBalance();
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">account2: &quot;</span> <span style="color: #666666">&lt;&lt;</span> account2.getName() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; balance is $&quot;</span>
+         <span style="color: #666666">&lt;&lt;</span> account2.getBalance() <span style="color: #666666">&lt;&lt;</span> endl;
+}
+
+
+
+<span style="color: #408080; font-style: italic">// 3.9 Account.h</span>
+
+
+<span style="color: #408080; font-style: italic">// Account class with name and balance data members, and a</span>
+<span style="color: #408080; font-style: italic">// constructor and deposit function that each perform validation.</span>
+<span style="color: #BC7A00">#include &lt;string&gt;</span>
+
+<span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Account</span>
+{
+<span style="color: #A0A000">public:</span>
+    <span style="color: #408080; font-style: italic">// Account constructor with two parameters</span>
+    Account(std<span style="color: #666666">::</span>string accountName, <span style="color: #B00040">int</span> initialBalance)
+        <span style="color: #666666">:</span> name{accountName}   <span style="color: #408080; font-style: italic">// assign accountName to data member name</span>
+    {
+
+        <span style="color: #408080; font-style: italic">// validate that the initialBalance is greater than 0; if not,</span>
+        <span style="color: #408080; font-style: italic">// data member balance keeps its default initial value of 0</span>
+        <span style="color: #008000; font-weight: bold">if</span> (initialBalance <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>)   <span style="color: #408080; font-style: italic">// if the initialBalance is valid</span>
+        {
+            balance <span style="color: #666666">=</span> initialBalance; <span style="color: #408080; font-style: italic">// assign it to data member balance</span>
+        }
+    }
+
+    <span style="color: #408080; font-style: italic">// function that deposits (adds) only a valid amount to the balance</span>
+    <span style="color: #B00040">void</span> deposit(<span style="color: #B00040">int</span> depositAmount)
+    {
+        <span style="color: #008000; font-weight: bold">if</span> (depositAmount <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>)   <span style="color: #408080; font-style: italic">// if the depositAmount is valid</span>
+        {
+            balance <span style="color: #666666">=</span> balance <span style="color: #666666">+</span> depositAmount; <span style="color: #408080; font-style: italic">// add it to the balance</span>
+        }
+    }
+
+    <span style="color: #B00040">void</span> withdraw(<span style="color: #B00040">int</span> withdrawAmount)
+    {
+        <span style="color: #008000; font-weight: bold">if</span>(withdrawAmount <span style="color: #666666">&lt;=</span> balance)
+        {
+            balance <span style="color: #666666">=</span> balance <span style="color: #666666">-</span> withdrawAmount;
+        }
+        <span style="color: #008000; font-weight: bold">else</span>
+        {
+            std<span style="color: #666666">::</span>cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Withdrawal amount exceeded account balance.</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+        }
+    }
+
+    <span style="color: #408080; font-style: italic">// function returns the account balance</span>
+    <span style="color: #B00040">int</span> getBalance() <span style="color: #008000; font-weight: bold">const</span>
+    {
+        <span style="color: #008000; font-weight: bold">return</span> balance;
+    }
+
+    <span style="color: #408080; font-style: italic">// function that sets the name</span>
+    <span style="color: #B00040">void</span> setName(std<span style="color: #666666">::</span>string accountName)
+    {
+        name <span style="color: #666666">=</span> accountName;
+    }
+
+    <span style="color: #408080; font-style: italic">// function that returns the name</span>
+    std<span style="color: #666666">::</span>string getName() <span style="color: #008000; font-weight: bold">const</span>
+    {
+        <span style="color: #008000; font-weight: bold">return</span> name;
+    }
+<span style="color: #A0A000">private:</span>
+    std<span style="color: #666666">::</span>string name; <span style="color: #408080; font-style: italic">// account name data member</span>
+    <span style="color: #B00040">int</span> balance{<span style="color: #666666">0</span>}; <span style="color: #408080; font-style: italic">// data member with default initial value</span>
+}; <span style="color: #408080; font-style: italic">// end class Account</span>
+</pre></div>
+
+</br></br>
+
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">// 3.10 InvoiceTest.cpp</span>
+
+<span style="color: #BC7A00">#include &quot;Invoice.h&quot;</span>
+<span style="color: #BC7A00">#include &lt;iostream&gt;</span>
+
+<span style="color: #008000; font-weight: bold">using</span> <span style="color: #008000; font-weight: bold">namespace</span> std;
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>()
+{
+    string partNumber, partDescription <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;&quot;</span>;
+    <span style="color: #B00040">int</span> partQuantity, partPrice, choice <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    <span style="color: #B00040">double</span> partVAT, partDiscount;
+    <span style="color: #B00040">bool</span> quit <span style="color: #666666">=</span> <span style="color: #008000">false</span>;
+
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter part number: &quot;</span>;
+    getline(cin, partNumber);
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter part description: &quot;</span>;
+    getline(cin, partDescription);
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter quantity: &quot;</span>;
+    cin <span style="color: #666666">&gt;&gt;</span> partQuantity;
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter price per part: &quot;</span>;
+    cin <span style="color: #666666">&gt;&gt;</span> partPrice;
+
+    Invoice invoice{partNumber, partDescription, partQuantity, partPrice};
+
+
+    <span style="color: #008000; font-weight: bold">while</span> (<span style="color: #666666">!</span>quit){
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n\n</span><span style="color: #BA2121">Invoice for part number &quot;</span> <span style="color: #666666">&lt;&lt;</span> invoice.getNumber();
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">Description:</span><span style="color: #BB6622; font-weight: bold">\n\t</span><span style="color: #BA2121">&quot;</span> <span style="color: #666666">&lt;&lt;</span> invoice.getDescription();
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">Quantity: &quot;</span> <span style="color: #666666">&lt;&lt;</span> invoice.getQuantity() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; at $&quot;</span> <span style="color: #666666">&lt;&lt;</span> invoice.getPrice() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; each&quot;</span>;
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">VAT is &quot;</span> <span style="color: #666666">&lt;&lt;</span> invoice.getVAT()<span style="color: #666666">*100</span> <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;%&quot;</span>;
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">Discount is &quot;</span> <span style="color: #666666">&lt;&lt;</span> invoice.getDiscount()<span style="color: #666666">*100</span> <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;%&quot;</span>;
+
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n\n</span><span style="color: #BA2121">1.\)Update part number.&quot;</span>;
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">2.\)Update part description.&quot;</span>;
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">3.\)Update part quantity.&quot;</span>;
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">4.\)Update part price.&quot;</span>;
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">5.\)Update VAT.&quot;</span>;
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">6.\)Apply discount.&quot;</span>;
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">7.\)Print invoice amount.&quot;</span>;
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">8.\)Quit&quot;</span>;
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n\n</span><span style="color: #BA2121">Choose an option: &quot;</span>;
+        cin <span style="color: #666666">&gt;&gt;</span> choice;
+
+        <span style="color: #008000; font-weight: bold">switch</span>(choice){
+        <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">1</span>:
+            cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">Enter new part number: &quot;</span>;
+            <span style="color: #008000; font-weight: bold">do</span> {getline(cin, partNumber);}<span style="color: #008000; font-weight: bold">while</span> (partNumber<span style="color: #666666">==</span><span style="color: #BA2121">&quot;&quot;</span>);
+            invoice.setNumber(partNumber);
+            <span style="color: #008000; font-weight: bold">break</span>;
+        <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">2</span>:
+            cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">Enter new part description: &quot;</span>;
+            <span style="color: #008000; font-weight: bold">do</span> {getline(cin, partDescription);}<span style="color: #008000; font-weight: bold">while</span> (partDescription<span style="color: #666666">==</span><span style="color: #BA2121">&quot;&quot;</span>);
+            invoice.setDescription(partDescription);
+            <span style="color: #008000; font-weight: bold">break</span>;
+        <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">3</span>:
+            cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">Enter new part quantity: &quot;</span>;
+            cin <span style="color: #666666">&gt;&gt;</span> partQuantity;
+            invoice.setQuantity(partQuantity);
+            <span style="color: #008000; font-weight: bold">break</span>;
+        <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">4</span>:
+            cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">Enter new part price: &quot;</span>;
+            cin <span style="color: #666666">&gt;&gt;</span> partPrice;
+            invoice.setPrice(partPrice);
+            <span style="color: #008000; font-weight: bold">break</span>;
+        <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">5</span>:
+            cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">Enter new VAT as a decimal: &quot;</span>;
+            cin <span style="color: #666666">&gt;&gt;</span> partVAT;
+            invoice.setVAT(partVAT);
+            <span style="color: #008000; font-weight: bold">break</span>;
+        <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">6</span>:
+            cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">Enter new discount as a decimal: &quot;</span>;
+            cin <span style="color: #666666">&gt;&gt;</span> partDiscount;
+            invoice.setDiscount(partDiscount);
+            <span style="color: #008000; font-weight: bold">break</span>;
+        <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">7</span>:
+            cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">Invoice amount is $&quot;</span> <span style="color: #666666">&lt;&lt;</span> invoice.getInvoiceAmount();
+            <span style="color: #008000; font-weight: bold">break</span>;
+        <span style="color: #008000; font-weight: bold">case</span> <span style="color: #666666">8</span>:
+            quit <span style="color: #666666">=</span> <span style="color: #008000">true</span>;
+            <span style="color: #008000; font-weight: bold">break</span>;
+        }
+    }
+}
+
+
+
+
+<span style="color: #408080; font-style: italic">// 3.10 Invoice.h</span>
+
+<span style="color: #BC7A00">#include &lt;string&gt;</span>
+
+<span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Invoice</span>{
+<span style="color: #A0A000">public:</span>
+    Invoice(std<span style="color: #666666">::</span>string partNumber, std<span style="color: #666666">::</span>string partDescription, <span style="color: #B00040">int</span> partQuantity, <span style="color: #B00040">int</span> partPrice)
+        <span style="color: #666666">:</span> number{partNumber}, description{partDescription}, quantity{partQuantity}, price{partPrice} {
+
+    }
+
+    <span style="color: #B00040">void</span> setNumber(std<span style="color: #666666">::</span>string partNumber){
+        number <span style="color: #666666">=</span> partNumber;
+    }
+
+    std<span style="color: #666666">::</span>string getNumber(){
+        <span style="color: #008000; font-weight: bold">return</span> number;
+    }
+
+    <span style="color: #B00040">void</span> setDescription(std<span style="color: #666666">::</span>string partDescription){
+        description <span style="color: #666666">=</span> partDescription;
+    }
+
+    std<span style="color: #666666">::</span>string getDescription(){
+        <span style="color: #008000; font-weight: bold">return</span> description;
+    }
+
+    <span style="color: #B00040">void</span> setQuantity(<span style="color: #B00040">int</span> partQuantity){
+        <span style="color: #008000; font-weight: bold">if</span> (partQuantity <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>) {
+            quantity <span style="color: #666666">=</span> partQuantity;
+        }
+    }
+
+    <span style="color: #B00040">int</span> getQuantity(){
+        <span style="color: #008000; font-weight: bold">return</span> quantity;
+    }
+
+    <span style="color: #B00040">void</span> setPrice(<span style="color: #B00040">int</span> partPrice){
+        <span style="color: #008000; font-weight: bold">if</span> (partPrice <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>) {
+            price <span style="color: #666666">=</span> partPrice;
+        }
+    }
+
+    <span style="color: #B00040">int</span> getPrice(){
+        <span style="color: #008000; font-weight: bold">return</span> price;
+    }
+
+    <span style="color: #B00040">void</span> setVAT(<span style="color: #B00040">double</span> partVAT){
+        <span style="color: #008000; font-weight: bold">if</span> (partVAT <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>) {
+            VAT <span style="color: #666666">=</span> partVAT;
+        }
+    }
+
+    <span style="color: #B00040">double</span> getVAT(){
+        <span style="color: #008000; font-weight: bold">return</span> VAT;
+    }
+
+    <span style="color: #B00040">void</span> setDiscount(<span style="color: #B00040">double</span> partDiscount){
+        <span style="color: #008000; font-weight: bold">if</span> (partDiscount <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>) {
+            discount <span style="color: #666666">=</span> partDiscount;
+        }
+    }
+
+    <span style="color: #B00040">double</span> getDiscount(){
+        <span style="color: #008000; font-weight: bold">return</span> discount;
+    }
+
+    <span style="color: #B00040">double</span> getInvoiceAmount(){
+        <span style="color: #B00040">int</span> amount <span style="color: #666666">=</span> quantity<span style="color: #666666">*</span>price<span style="color: #666666">*</span>(<span style="color: #666666">1+</span>VAT)<span style="color: #666666">*</span>(<span style="color: #666666">1-</span>discount);
+        <span style="color: #008000; font-weight: bold">return</span> amount;
+    }
+
+<span style="color: #A0A000">private:</span>
+    std<span style="color: #666666">::</span>string number;
+    std<span style="color: #666666">::</span>string description;
+    <span style="color: #B00040">int</span> quantity;
+    <span style="color: #B00040">int</span> price;
+    <span style="color: #B00040">double</span> VAT{<span style="color: #666666">0.2</span>};
+    <span style="color: #B00040">double</span> discount{<span style="color: #666666">0</span>};
+};
+</pre></div>
