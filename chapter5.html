@@ -1,0 +1,97 @@
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">//5.30 Interest.cpp</span>
+<span style="color: #BC7A00">#include &lt;iostream&gt;</span>
+<span style="color: #BC7A00">#include &lt;iomanip&gt;</span>
+<span style="color: #BC7A00">#include &lt;string&gt;</span>
+<span style="color: #BC7A00">#include &quot;DollarAmount.h&quot;</span>
+<span style="color: #008000; font-weight: bold">using</span> <span style="color: #008000; font-weight: bold">namespace</span> std;
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>() {
+   DollarAmount d1{<span style="color: #666666">12345</span>}; <span style="color: #408080; font-style: italic">// $123.45</span>
+   DollarAmount d2{<span style="color: #666666">1576</span>}; <span style="color: #408080; font-style: italic">// $15.76</span>
+
+   cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;After adding d2 (&quot;</span> <span style="color: #666666">&lt;&lt;</span> d2.toString() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;) into d1 (&quot;</span>
+      <span style="color: #666666">&lt;&lt;</span> d1.toString() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;), d1 = &quot;</span>;
+   d1.add(d2); <span style="color: #408080; font-style: italic">// modifies object d1</span>
+   cout <span style="color: #666666">&lt;&lt;</span> d1.toString() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+
+   cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;After subtracting d2 (&quot;</span> <span style="color: #666666">&lt;&lt;</span> d2.toString() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;) from d1 (&quot;</span>
+      <span style="color: #666666">&lt;&lt;</span> d1.toString() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;), d1 = &quot;</span>;
+   d1.subtract(d2); <span style="color: #408080; font-style: italic">// modifies object d1</span>
+   cout <span style="color: #666666">&lt;&lt;</span> d1.toString() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+
+   cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;After subtracting d1 (&quot;</span> <span style="color: #666666">&lt;&lt;</span> d1.toString() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;) from d2 (&quot;</span>
+      <span style="color: #666666">&lt;&lt;</span> d2.toString() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;), d2 = &quot;</span>;
+   d2.subtract(d1); <span style="color: #408080; font-style: italic">// modifies object d2</span>
+   cout <span style="color: #666666">&lt;&lt;</span> d2.toString() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n\n</span><span style="color: #BA2121">&quot;</span>;
+
+   cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter integer interest rate and divisor. For example:</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>
+      <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;for     2%, enter:    2 100</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>
+      <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;for   2.3%, enter:   23 1000</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>
+      <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;for  2.37%, enter:  237 10000</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>
+      <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;for 2.375%, enter: 2375 100000</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&gt; &quot;</span>;
+   <span style="color: #B00040">int</span> rate; <span style="color: #408080; font-style: italic">// whole-number interest rate</span>
+   <span style="color: #B00040">int</span> divisor; <span style="color: #408080; font-style: italic">// divisor for rate</span>
+   cin <span style="color: #666666">&gt;&gt;</span> rate <span style="color: #666666">&gt;&gt;</span> divisor;
+
+   DollarAmount balance{<span style="color: #666666">100000</span>}; <span style="color: #408080; font-style: italic">// initial principal amount in pennies</span>
+   cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">Initial balance: &quot;</span> <span style="color: #666666">&lt;&lt;</span> balance.toString() <span style="color: #666666">&lt;&lt;</span> endl;
+
+   <span style="color: #408080; font-style: italic">// display headers</span>
+   cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">Year&quot;</span> <span style="color: #666666">&lt;&lt;</span> setw(<span style="color: #666666">20</span>) <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Amount on deposit&quot;</span> <span style="color: #666666">&lt;&lt;</span> endl;
+
+   <span style="color: #408080; font-style: italic">// calculate amount on deposit for each of ten years</span>
+   <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">unsigned</span> <span style="color: #B00040">int</span> year{<span style="color: #666666">1</span>}; year <span style="color: #666666">&lt;=</span> <span style="color: #666666">10</span>; year<span style="color: #666666">++</span>) {
+      <span style="color: #408080; font-style: italic">// increase balance by rate % (i.e., rate / divisor)</span>
+      balance.addInterest(rate, divisor);
+
+      <span style="color: #408080; font-style: italic">// display the year and the amount</span>
+      cout <span style="color: #666666">&lt;&lt;</span> setw(<span style="color: #666666">4</span>) <span style="color: #666666">&lt;&lt;</span> year <span style="color: #666666">&lt;&lt;</span> setw(<span style="color: #666666">20</span>) <span style="color: #666666">&lt;&lt;</span> balance.toString() <span style="color: #666666">&lt;&lt;</span> endl;
+   }
+}
+
+<span style="color: #408080; font-style: italic">//5.30 DollarAmount.h</span>
+<span style="color: #BC7A00">#include &lt;string&gt;</span>
+<span style="color: #BC7A00">#include &lt;cmath&gt;</span>
+
+<span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">DollarAmount</span> {
+<span style="color: #A0A000">public:</span>
+   <span style="color: #408080; font-style: italic">// initialize amount from an int64_t value</span>
+   <span style="color: #008000; font-weight: bold">explicit</span> DollarAmount(<span style="color: #B00040">int64_t</span> value) <span style="color: #666666">:</span> amount{value} { }
+
+   <span style="color: #008000; font-weight: bold">explicit</span> DollarAmount(<span style="color: #B00040">int64_t</span> dollars, <span style="color: #B00040">int64_t</span> cents) <span style="color: #666666">:</span> amount {dollars<span style="color: #666666">*100+</span>cents} { }
+
+   <span style="color: #408080; font-style: italic">// add right&#39;s amount to this object&#39;s amount</span>
+   <span style="color: #B00040">void</span> add(DollarAmount right) {
+      <span style="color: #408080; font-style: italic">// can access private data of other objects of the same class</span>
+      amount <span style="color: #666666">+=</span> right.amount;
+   }
+
+   <span style="color: #408080; font-style: italic">// subtract right&#39;s amount from this object&#39;s amount</span>
+   <span style="color: #B00040">void</span> subtract(DollarAmount right) {
+      <span style="color: #408080; font-style: italic">// can access private data of other objects of the same class</span>
+      amount <span style="color: #666666">-=</span> right.amount;
+   }
+
+   <span style="color: #408080; font-style: italic">// uses integer arithmetic to calculate interest amount,</span>
+   <span style="color: #408080; font-style: italic">// then calls add with the interest amount</span>
+   <span style="color: #B00040">void</span> addInterest(<span style="color: #B00040">int</span> rate, <span style="color: #B00040">int</span> divisor) {
+      <span style="color: #408080; font-style: italic">// create DollarAmount representing the interest</span>
+      DollarAmount interest{
+         (amount <span style="color: #666666">*</span> rate <span style="color: #666666">+</span> divisor <span style="color: #666666">/</span> <span style="color: #666666">2</span>) <span style="color: #666666">/</span> divisor
+      };
+
+      add(interest); <span style="color: #408080; font-style: italic">// add interest to this object&#39;s amount</span>
+   }
+
+   <span style="color: #408080; font-style: italic">// return a string representation of a DollarAmount object</span>
+   std<span style="color: #666666">::</span>string toString() <span style="color: #008000; font-weight: bold">const</span> {
+      std<span style="color: #666666">::</span>string dollars{std<span style="color: #666666">::</span>to_string(amount <span style="color: #666666">/</span> <span style="color: #666666">100</span>)};
+      std<span style="color: #666666">::</span>string cents{std<span style="color: #666666">::</span>to_string(std<span style="color: #666666">::</span>abs(amount <span style="color: #666666">%</span> <span style="color: #666666">100</span>))};
+      <span style="color: #008000; font-weight: bold">return</span> dollars <span style="color: #666666">+</span> <span style="color: #BA2121">&quot;.&quot;</span> <span style="color: #666666">+</span> (cents.size() <span style="color: #666666">==</span> <span style="color: #666666">1</span> <span style="color: #666666">?</span> <span style="color: #BA2121">&quot;0&quot;</span> <span style="color: #666666">:</span> <span style="color: #BA2121">&quot;&quot;</span>) <span style="color: #666666">+</span> cents;
+   }
+<span style="color: #A0A000">private:</span>
+   <span style="color: #B00040">int64_t</span> amount{<span style="color: #666666">0</span>}; <span style="color: #408080; font-style: italic">// dollar amount in pennies</span>
+};
+</pre></div>
+
+</br></br>
