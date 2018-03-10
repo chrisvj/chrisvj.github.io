@@ -1,0 +1,169 @@
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">//6.24</span>
+<span style="color: #BC7A00">#include &lt;iostream&gt;</span>
+<span style="color: #BC7A00">#include &lt;math.h&gt;</span>
+
+<span style="color: #008000; font-weight: bold">using</span> <span style="color: #008000; font-weight: bold">namespace</span> std;
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">whole</span>(<span style="color: #B00040">int</span> a, <span style="color: #B00040">int</span> b)
+{
+    <span style="color: #008000; font-weight: bold">return</span> a<span style="color: #666666">/</span>b;
+}
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">remainder</span>(<span style="color: #B00040">int</span> a, <span style="color: #B00040">int</span> b){
+    <span style="color: #008000; font-weight: bold">return</span> a<span style="color: #666666">%</span>b;
+}
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">formatnumber</span>(<span style="color: #B00040">int</span> a){
+    <span style="color: #008000; font-weight: bold">if</span> (a <span style="color: #666666">&lt;</span> <span style="color: #666666">10</span>)
+    {
+        cout <span style="color: #666666">&lt;&lt;</span> a;
+    }
+    <span style="color: #008000; font-weight: bold">else</span> {
+        formatnumber(whole(a, <span style="color: #666666">10</span>));
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;  &quot;</span> <span style="color: #666666">&lt;&lt;</span> remainder(a, <span style="color: #666666">10</span>);
+    }
+}
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>(){
+    <span style="color: #B00040">int</span> seed <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter a seed: &quot;</span>;
+    cin <span style="color: #666666">&gt;&gt;</span> seed;
+    srand(seed);
+    <span style="color: #B00040">int</span> number <span style="color: #666666">=</span> rand();
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Unformatted number: &quot;</span> <span style="color: #666666">&lt;&lt;</span> number <span style="color: #666666">&lt;&lt;</span> endl;
+    formatnumber(number);
+}
+</pre></div>
+
+</br></br>
+
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">//6.25</span>
+<span style="color: #BC7A00">#include &lt;iostream&gt;</span>
+
+<span style="color: #008000; font-weight: bold">using</span> <span style="color: #008000; font-weight: bold">namespace</span> std;
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">toMinutes</span>(<span style="color: #B00040">int</span> days, <span style="color: #B00040">int</span> hours, <span style="color: #B00040">int</span> minutes){
+    <span style="color: #008000; font-weight: bold">return</span> days<span style="color: #666666">*24*60+</span>hours<span style="color: #666666">*60+</span>minutes;
+}
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>(){
+    <span style="color: #B00040">int</span> days <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    <span style="color: #B00040">int</span> hours <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    <span style="color: #B00040">int</span> minutes <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter days: &quot;</span>;
+    cin <span style="color: #666666">&gt;&gt;</span> days;
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter hours: &quot;</span>;
+    cin <span style="color: #666666">&gt;&gt;</span> hours;
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter minutes: &quot;</span>;
+    cin <span style="color: #666666">&gt;&gt;</span> minutes;
+
+    <span style="color: #B00040">int</span> days2 <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    <span style="color: #B00040">int</span> hours2 <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    <span style="color: #B00040">int</span> minutes2 <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter days for 2nd time: &quot;</span>;
+    cin <span style="color: #666666">&gt;&gt;</span> days2;
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter hours for 2nd time: &quot;</span>;
+    cin <span style="color: #666666">&gt;&gt;</span> hours2;
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter minutes for 2nd time: &quot;</span>;
+    cin <span style="color: #666666">&gt;&gt;</span> minutes2;
+
+    <span style="color: #B00040">int</span> time <span style="color: #666666">=</span> toMinutes(days, hours, minutes);
+    <span style="color: #B00040">int</span> time2 <span style="color: #666666">=</span> toMinutes(days2, hours2, minutes2);
+
+    <span style="color: #B00040">int</span> difference <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+
+    <span style="color: #008000; font-weight: bold">if</span> (time <span style="color: #666666">&gt;</span> time2)
+    {
+        difference <span style="color: #666666">=</span> time <span style="color: #666666">-</span> time2;
+    }
+    <span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span> (time2 <span style="color: #666666">&gt;</span> time)
+    {
+        difference <span style="color: #666666">=</span> time2 <span style="color: #666666">-</span> time;
+    }
+
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Minutes between times: &quot;</span> <span style="color: #666666">&lt;&lt;</span> difference;
+}
+</pre></div>
+
+</br></br>
+
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">//6.26</span>
+<span style="color: #BC7A00">#include &lt;iostream&gt;</span>
+<span style="color: #BC7A00">#include &lt;iomanip&gt;</span>
+
+<span style="color: #008000; font-weight: bold">using</span> <span style="color: #008000; font-weight: bold">namespace</span> std;
+
+<span style="color: #B00040">float</span> <span style="color: #0000FF">toC</span>(<span style="color: #B00040">float</span> f)
+{
+    <span style="color: #B00040">float</span> c <span style="color: #666666">=</span> (f<span style="color: #666666">-32</span>)<span style="color: #666666">*5/9</span>;
+    <span style="color: #008000; font-weight: bold">return</span> c;
+}
+
+<span style="color: #B00040">float</span> <span style="color: #0000FF">toF</span>(<span style="color: #B00040">int</span> c)
+{
+    <span style="color: #B00040">float</span> f <span style="color: #666666">=</span> c<span style="color: #666666">*</span>(<span style="color: #666666">9/5</span>)<span style="color: #666666">+32</span>;
+    <span style="color: #008000; font-weight: bold">return</span> f;
+}
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">cTable</span>()
+{
+    <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">int</span> i <span style="color: #666666">=</span> <span style="color: #666666">0</span>; i <span style="color: #666666">&lt;</span> <span style="color: #666666">4</span>; i<span style="color: #666666">++</span>)
+    {
+        cout <span style="color: #666666">&lt;&lt;</span> setw(<span style="color: #666666">4</span>) <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;C&quot;</span>;
+        cout <span style="color: #666666">&lt;&lt;</span> setw(<span style="color: #666666">8</span>) <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;F&quot;</span>;
+        cout <span style="color: #666666">&lt;&lt;</span> setw(<span style="color: #666666">10</span>) <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; &quot;</span>;
+    }
+    <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">int</span> c <span style="color: #666666">=</span> <span style="color: #666666">0</span>; c <span style="color: #666666">&lt;=100</span>; c<span style="color: #666666">++</span>)
+    {
+        <span style="color: #008000; font-weight: bold">if</span> (c<span style="color: #666666">%4==0</span>)
+        {
+            cout <span style="color: #666666">&lt;&lt;</span> endl;
+        }
+        cout <span style="color: #666666">&lt;&lt;</span> setw(<span style="color: #666666">4</span>) <span style="color: #666666">&lt;&lt;</span> c;
+        cout <span style="color: #666666">&lt;&lt;</span> setw(<span style="color: #666666">8</span>) <span style="color: #666666">&lt;&lt;</span> toF(c);
+        cout <span style="color: #666666">&lt;&lt;</span> setw(<span style="color: #666666">10</span>) <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; &quot;</span>;
+    }
+    cout <span style="color: #666666">&lt;&lt;</span> endl <span style="color: #666666">&lt;&lt;</span> endl;
+}
+
+<span style="color: #B00040">void</span> <span style="color: #0000FF">fTable</span>()
+{
+    <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">int</span> i <span style="color: #666666">=</span> <span style="color: #666666">0</span>; i <span style="color: #666666">&lt;</span> <span style="color: #666666">4</span>; i<span style="color: #666666">++</span>)
+    {
+        cout <span style="color: #666666">&lt;&lt;</span> setw(<span style="color: #666666">4</span>) <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;F&quot;</span>;
+        cout <span style="color: #666666">&lt;&lt;</span> setw(<span style="color: #666666">8</span>) <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;C&quot;</span>;
+        cout <span style="color: #666666">&lt;&lt;</span> setw(<span style="color: #666666">10</span>) <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; &quot;</span>;
+    }
+    <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">int</span> f <span style="color: #666666">=</span> <span style="color: #666666">32</span>; f <span style="color: #666666">&lt;=212</span>; f<span style="color: #666666">++</span>)
+    {
+        <span style="color: #008000; font-weight: bold">if</span> (f<span style="color: #666666">%4==0</span>)
+        {
+            cout <span style="color: #666666">&lt;&lt;</span> endl;
+        }
+        cout <span style="color: #666666">&lt;&lt;</span> setw(<span style="color: #666666">4</span>) <span style="color: #666666">&lt;&lt;</span> f;
+        cout <span style="color: #666666">&lt;&lt;</span> setw(<span style="color: #666666">8</span>) <span style="color: #666666">&lt;&lt;</span> toC(f);
+        cout <span style="color: #666666">&lt;&lt;</span> setw(<span style="color: #666666">10</span>) <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; &quot;</span>;
+    }
+    cout <span style="color: #666666">&lt;&lt;</span> endl <span style="color: #666666">&lt;&lt;</span> endl;
+}
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>(){
+    cout <span style="color: #666666">&lt;&lt;</span> fixed;
+    cout <span style="color: #666666">&lt;&lt;</span> setprecision(<span style="color: #666666">2</span>);
+    <span style="color: #008000; font-weight: bold">while</span>(<span style="color: #666666">1</span>)
+    {
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;1.) F-&gt;C</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">2.) C-&gt;F</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">3.) Quit</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">Selection: &quot;</span>;
+        <span style="color: #B00040">int</span> selection <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+        cin <span style="color: #666666">&gt;&gt;</span> selection;
+        <span style="color: #008000; font-weight: bold">if</span> (selection <span style="color: #666666">==</span> <span style="color: #666666">1</span>){
+            fTable();
+        }
+        <span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">if</span> (selection <span style="color: #666666">==</span> <span style="color: #666666">2</span>){
+            cTable();
+        }
+        <span style="color: #008000; font-weight: bold">else</span>{
+            <span style="color: #008000; font-weight: bold">break</span>;
+        }
+    }
+}
+</pre></div>
