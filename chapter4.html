@@ -1,0 +1,313 @@
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">//4.13</span>
+<span style="color: #BC7A00">#include &lt;iostream&gt;</span>
+
+<span style="color: #008000; font-weight: bold">using</span> <span style="color: #008000; font-weight: bold">namespace</span> std;
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>(){
+    <span style="color: #B00040">float</span> kilometers <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    <span style="color: #B00040">float</span> liters <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    <span style="color: #B00040">float</span> totalkilos <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    <span style="color: #B00040">float</span> totalliters <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    <span style="color: #008000; font-weight: bold">while</span>(<span style="color: #008000">true</span>){
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter kilometers driven (-1 to quit): &quot;</span>;
+        cin <span style="color: #666666">&gt;&gt;</span> kilometers;
+        <span style="color: #008000; font-weight: bold">if</span> (kilometers <span style="color: #666666">==</span> <span style="color: #666666">-1</span>){
+            <span style="color: #008000; font-weight: bold">break</span>;
+        }
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter liters used: &quot;</span>;
+        cin <span style="color: #666666">&gt;&gt;</span> liters;
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Kms per liter this trip: &quot;</span> <span style="color: #666666">&lt;&lt;</span> kilometers<span style="color: #666666">/</span>liters <span style="color: #666666">&lt;&lt;</span> endl;
+        totalkilos<span style="color: #666666">+=</span>kilometers;
+        totalliters<span style="color: #666666">+=</span>liters;
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Total kms per liters: &quot;</span> <span style="color: #666666">&lt;&lt;</span> totalkilos<span style="color: #666666">/</span>totalliters <span style="color: #666666">&lt;&lt;</span> endl <span style="color: #666666">&lt;&lt;</span> endl;
+    }
+}
+</pre></div>
+
+</br>
+
+<img src="4.13.png">
+
+</br></br>
+
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">//4.17</span>
+<span style="color: #BC7A00">#include &lt;iostream&gt;</span>
+
+<span style="color: #008000; font-weight: bold">using</span> <span style="color: #008000; font-weight: bold">namespace</span> std;
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>(){
+    <span style="color: #B00040">int</span> counter <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    <span style="color: #B00040">int</span> number <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    <span style="color: #B00040">int</span> largest <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+
+    <span style="color: #008000; font-weight: bold">while</span> (counter <span style="color: #666666">&lt;</span> <span style="color: #666666">10</span>){
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter number: &quot;</span>;
+        cin <span style="color: #666666">&gt;&gt;</span> number;
+        <span style="color: #008000; font-weight: bold">if</span> (number <span style="color: #666666">&gt;</span> largest){
+            largest <span style="color: #666666">=</span> number;
+        }
+        counter<span style="color: #666666">++</span>;
+    }
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Largest: &quot;</span> <span style="color: #666666">&lt;&lt;</span> largest;
+}
+</pre></div>
+
+</br>
+
+<img src="4.17.png">
+
+</br></br>
+
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">//4.26</span>
+<span style="color: #BC7A00">#include &lt;iostream&gt;</span>
+
+<span style="color: #008000; font-weight: bold">using</span> <span style="color: #008000; font-weight: bold">namespace</span> std;
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>(){
+    <span style="color: #B00040">int</span> size <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter square size: &quot;</span>;
+    cin <span style="color: #666666">&gt;&gt;</span> size;
+    cout <span style="color: #666666">&lt;&lt;</span> endl <span style="color: #666666">&lt;&lt;</span> endl;
+    <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">int</span> x<span style="color: #666666">=0</span>; x<span style="color: #666666">&lt;</span>size;x<span style="color: #666666">++</span>){
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;*&quot;</span>;
+    }
+    <span style="color: #B00040">int</span> height <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    <span style="color: #008000; font-weight: bold">while</span> (height <span style="color: #666666">&lt;</span> size<span style="color: #666666">-1</span>)
+    {
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">*&quot;</span>;
+        <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">int</span> x<span style="color: #666666">=1</span>; x<span style="color: #666666">&lt;</span>size<span style="color: #666666">-1</span>;x<span style="color: #666666">++</span>){
+            cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; &quot;</span>;
+        }
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;*&quot;</span>;
+        height<span style="color: #666666">++</span>;
+    }
+    cout <span style="color: #666666">&lt;&lt;</span> endl;
+    <span style="color: #008000; font-weight: bold">if</span> (size <span style="color: #666666">&gt;</span> <span style="color: #666666">1</span>){
+        <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">int</span> x<span style="color: #666666">=0</span>; x<span style="color: #666666">&lt;</span>size;x<span style="color: #666666">++</span>){
+            cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;*&quot;</span>;
+        }
+    }
+}
+</pre></div>
+
+</br>
+
+<img src="4.26.png">
+
+</br></br>
+
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">//4.35a</span>
+<span style="color: #BC7A00">#include &lt;iostream&gt;</span>
+
+<span style="color: #008000; font-weight: bold">using</span> <span style="color: #008000; font-weight: bold">namespace</span> std;
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>(){
+    <span style="color: #B00040">int</span> number<span style="color: #666666">=-1</span>;
+    <span style="color: #B00040">int</span> factorial<span style="color: #666666">=1</span>;
+
+    <span style="color: #008000; font-weight: bold">while</span> (number <span style="color: #666666">&lt;</span> <span style="color: #666666">0</span>)
+    {
+        cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter a non-negative number: &quot;</span>;
+        cin <span style="color: #666666">&gt;&gt;</span> number;
+    }
+
+    <span style="color: #008000; font-weight: bold">for</span> (number; number <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>; number<span style="color: #666666">--</span>){
+        factorial <span style="color: #666666">*=</span> number;
+    }
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Factorial is: &quot;</span> <span style="color: #666666">&lt;&lt;</span> factorial;
+}
+</pre></div>
+
+</br>
+
+<img src="4.35a.png">
+
+</br></br>
+
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">//4.35b</span>
+<span style="color: #BC7A00">#include &lt;iostream&gt;</span>
+
+<span style="color: #008000; font-weight: bold">using</span> <span style="color: #008000; font-weight: bold">namespace</span> std;
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>(){
+    <span style="color: #B00040">int</span> accuracy <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    <span style="color: #B00040">float</span> e <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter an accuracy: &quot;</span>;
+    cin <span style="color: #666666">&gt;&gt;</span> accuracy;
+
+    <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">int</span> x <span style="color: #666666">=</span> <span style="color: #666666">1</span>; x <span style="color: #666666">&lt;</span> accuracy; x<span style="color: #666666">++</span>){
+        <span style="color: #B00040">float</span> factorial <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">int</span> p<span style="color: #666666">=</span>x; p <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>; p<span style="color: #666666">--</span>){
+            factorial <span style="color: #666666">*=</span> p;
+        }
+        e<span style="color: #666666">+=</span>(<span style="color: #666666">1/</span>factorial);
+    }
+
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;e is: &quot;</span> <span style="color: #666666">&lt;&lt;</span> e;
+}
+</pre></div>
+
+</br>
+
+<img src="4.35b.png">
+
+</br></br>
+
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">//4.35c</span>
+<span style="color: #BC7A00">#include &lt;iostream&gt;</span>
+<span style="color: #BC7A00">#include &lt;math.h&gt;</span>
+
+<span style="color: #008000; font-weight: bold">using</span> <span style="color: #008000; font-weight: bold">namespace</span> std;
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>(){
+    <span style="color: #B00040">int</span> accuracy <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+    <span style="color: #B00040">float</span> e <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+    <span style="color: #B00040">float</span> y <span style="color: #666666">=</span> <span style="color: #666666">0</span>;
+
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter a value for x: &quot;</span>;
+    cin <span style="color: #666666">&gt;&gt;</span> y;
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Enter an accuracy: &quot;</span>;
+    cin <span style="color: #666666">&gt;&gt;</span> accuracy;
+
+    <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">int</span> x <span style="color: #666666">=</span> <span style="color: #666666">1</span>; x <span style="color: #666666">&lt;</span> accuracy; x<span style="color: #666666">++</span>){
+        <span style="color: #B00040">float</span> factorial <span style="color: #666666">=</span> <span style="color: #666666">1</span>;
+        <span style="color: #008000; font-weight: bold">for</span> (<span style="color: #B00040">int</span> p<span style="color: #666666">=</span>x; p <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>; p<span style="color: #666666">--</span>){
+            factorial <span style="color: #666666">*=</span> p;
+        }
+        e<span style="color: #666666">+=</span>(pow(y,x)<span style="color: #666666">/</span>factorial);
+    }
+
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;e is: &quot;</span> <span style="color: #666666">&lt;&lt;</span> e;
+}
+</pre></div>
+
+</br>
+
+<img src="4.35c.png">
+
+</br></br>
+
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">//4.36 main.cpp</span>
+<span style="color: #BC7A00">#include &lt;iostream&gt;</span>
+<span style="color: #BC7A00">#include &lt;iomanip&gt;</span>
+<span style="color: #BC7A00">#include &quot;Account.h&quot;</span>
+
+<span style="color: #008000; font-weight: bold">using</span> <span style="color: #008000; font-weight: bold">namespace</span> std;
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>()
+{
+    Account account1{<span style="color: #BA2121">&quot;Jane Green&quot;</span>, <span style="color: #666666">50</span>};
+    Account account2{<span style="color: #BA2121">&quot;John Blue&quot;</span>, <span style="color: #666666">-7</span>};
+
+    cout <span style="color: #666666">&lt;&lt;</span> fixed;
+    cout <span style="color: #666666">&lt;&lt;</span> setprecision(<span style="color: #666666">2</span>);
+
+    <span style="color: #408080; font-style: italic">// display initial balance of each object</span>
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;account1: &quot;</span> <span style="color: #666666">&lt;&lt;</span> account1.getName() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; balance is $&quot;</span>
+         <span style="color: #666666">&lt;&lt;</span> account1.getBalance();
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">account2: &quot;</span> <span style="color: #666666">&lt;&lt;</span> account2.getName() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; balance is $&quot;</span>
+         <span style="color: #666666">&lt;&lt;</span> account2.getBalance();
+
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n\n</span><span style="color: #BA2121">Enter deposit amount for account1: &quot;</span>; <span style="color: #408080; font-style: italic">// prompt</span>
+    <span style="color: #B00040">double</span> depositAmount;
+    cin <span style="color: #666666">&gt;&gt;</span> depositAmount; <span style="color: #408080; font-style: italic">// obtain user input</span>
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;adding &quot;</span> <span style="color: #666666">&lt;&lt;</span> depositAmount <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; to account1 balance&quot;</span>;
+    account1.deposit(depositAmount); <span style="color: #408080; font-style: italic">// add to account1&#39;s balance</span>
+
+    <span style="color: #408080; font-style: italic">// display balances</span>
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n\n</span><span style="color: #BA2121">account1: &quot;</span> <span style="color: #666666">&lt;&lt;</span> account1.getName() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; balance is $&quot;</span>
+         <span style="color: #666666">&lt;&lt;</span> account1.getBalance();
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">account2: &quot;</span> <span style="color: #666666">&lt;&lt;</span> account2.getName() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; balance is $&quot;</span>
+         <span style="color: #666666">&lt;&lt;</span> account2.getBalance();
+
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n\n</span><span style="color: #BA2121">Enter deposit amount for account2: &quot;</span>; <span style="color: #408080; font-style: italic">// prompt</span>
+    cin <span style="color: #666666">&gt;&gt;</span> depositAmount; <span style="color: #408080; font-style: italic">// obtain user input</span>
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;adding &quot;</span> <span style="color: #666666">&lt;&lt;</span> depositAmount <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; to account2 balance&quot;</span>;
+    account2.deposit(depositAmount); <span style="color: #408080; font-style: italic">// add to account2 balance</span>
+
+    <span style="color: #408080; font-style: italic">// display balances</span>
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n\n</span><span style="color: #BA2121">account1: &quot;</span> <span style="color: #666666">&lt;&lt;</span> account1.getName() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; balance is $&quot;</span>
+         <span style="color: #666666">&lt;&lt;</span> account1.getBalance();
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">account2: &quot;</span> <span style="color: #666666">&lt;&lt;</span> account2.getName() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; balance is $&quot;</span>
+         <span style="color: #666666">&lt;&lt;</span> account2.getBalance() <span style="color: #666666">&lt;&lt;</span> endl;
+
+    <span style="color: #408080; font-style: italic">// Withdrawal amount</span>
+    <span style="color: #B00040">double</span> withdrawAmount;
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n\n</span><span style="color: #BA2121">Enter withdrawal amount for account1: &quot;</span>;
+    cin <span style="color: #666666">&gt;&gt;</span> withdrawAmount;
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;withdrawing &quot;</span> <span style="color: #666666">&lt;&lt;</span> withdrawAmount <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; from account1 balance&quot;</span>;
+    account1.withdraw(withdrawAmount);
+
+    <span style="color: #408080; font-style: italic">// display balances</span>
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n\n</span><span style="color: #BA2121">account1: &quot;</span> <span style="color: #666666">&lt;&lt;</span> account1.getName() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; balance is $&quot;</span>
+         <span style="color: #666666">&lt;&lt;</span> account1.getBalance();
+    cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">account2: &quot;</span> <span style="color: #666666">&lt;&lt;</span> account2.getName() <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot; balance is $&quot;</span>
+         <span style="color: #666666">&lt;&lt;</span> account2.getBalance() <span style="color: #666666">&lt;&lt;</span> endl;
+}
+
+
+<span style="color: #408080; font-style: italic">//4.36 account.h</span>
+<span style="color: #BC7A00">#include &lt;string&gt;</span>
+
+<span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">Account</span>
+{
+<span style="color: #A0A000">public:</span>
+    <span style="color: #408080; font-style: italic">// Account constructor with two parameters</span>
+    Account(std<span style="color: #666666">::</span>string accountName, <span style="color: #B00040">double</span> initialBalance)
+        <span style="color: #666666">:</span> name{accountName}   <span style="color: #408080; font-style: italic">// assign accountName to data member name</span>
+    {
+
+        <span style="color: #408080; font-style: italic">// validate that the initialBalance is greater than 0; if not,</span>
+        <span style="color: #408080; font-style: italic">// data member balance keeps its default initial value of 0</span>
+        <span style="color: #008000; font-weight: bold">if</span> (initialBalance <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>)   <span style="color: #408080; font-style: italic">// if the initialBalance is valid</span>
+        {
+            balance <span style="color: #666666">=</span> initialBalance; <span style="color: #408080; font-style: italic">// assign it to data member balance</span>
+        }
+    }
+
+    <span style="color: #408080; font-style: italic">// function that deposits (adds) only a valid amount to the balance</span>
+    <span style="color: #B00040">void</span> deposit(<span style="color: #B00040">double</span> depositAmount)
+    {
+        <span style="color: #008000; font-weight: bold">if</span> (depositAmount <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>)   <span style="color: #408080; font-style: italic">// if the depositAmount is valid</span>
+        {
+            balance <span style="color: #666666">=</span> balance <span style="color: #666666">+</span> depositAmount; <span style="color: #408080; font-style: italic">// add it to the balance</span>
+        }
+    }
+
+    <span style="color: #B00040">void</span> withdraw(<span style="color: #B00040">double</span> withdrawAmount)
+    {
+        <span style="color: #008000; font-weight: bold">if</span>(withdrawAmount <span style="color: #666666">&lt;=</span> balance)
+        {
+            balance <span style="color: #666666">=</span> balance <span style="color: #666666">-</span> withdrawAmount;
+        }
+        <span style="color: #008000; font-weight: bold">else</span>
+        {
+            std<span style="color: #666666">::</span>cout <span style="color: #666666">&lt;&lt;</span> <span style="color: #BA2121">&quot;Withdrawal amount exceeded account balance.</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+        }
+    }
+
+    <span style="color: #408080; font-style: italic">// function returns the account balance</span>
+    <span style="color: #B00040">double</span> getBalance() <span style="color: #008000; font-weight: bold">const</span>
+    {
+        <span style="color: #008000; font-weight: bold">return</span> balance;
+    }
+
+    <span style="color: #408080; font-style: italic">// function that sets the name</span>
+    <span style="color: #B00040">void</span> setName(std<span style="color: #666666">::</span>string accountName)
+    {
+        name <span style="color: #666666">=</span> accountName;
+    }
+
+    <span style="color: #408080; font-style: italic">// function that returns the name</span>
+    std<span style="color: #666666">::</span>string getName() <span style="color: #008000; font-weight: bold">const</span>
+    {
+        <span style="color: #008000; font-weight: bold">return</span> name;
+    }
+<span style="color: #A0A000">private:</span>
+    std<span style="color: #666666">::</span>string name; <span style="color: #408080; font-style: italic">// account name data member</span>
+    <span style="color: #B00040">double</span> balance{<span style="color: #666666">0</span>}; <span style="color: #408080; font-style: italic">// data member with default initial value</span>
+}; <span style="color: #408080; font-style: italic">// end class Account</span>
+</pre></div>
+
+</br></br>
